@@ -1,4 +1,4 @@
-var password = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890`~!@#$%^&*()_+-={}[]:;'<,>.?/'";
+var password = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890~!@#$%^&*()_+-={}[]:;'<,>.?/'";
 
 
 var lengthPassword = "";
@@ -9,12 +9,17 @@ function getRandom(){
 	return Math.floor(Math.random() * password.length);
 }
 
-function generatePassword(x){
 
+function generatePassword(x,p){
+
+	if(finalPassword != ""){
+		finalPassword = "";
+	}
+
+finalPassword == "";
 	if(x == 'low') lengthPassword = 8;
 	if(x == 'medium') lengthPassword = 12;
 	if(x == 'strong') lengthPassword = 16;
-
 
 	for (var i = 0; i < lengthPassword ; i++) {
 
@@ -23,7 +28,11 @@ function generatePassword(x){
 }
 	document.getElementById('myInput').value = finalPassword;
 
+}
 
+function getRefresh(){
+	finalPassword = "";
+	document.getElementById('myInput').value = finalPassword;
 }
 
 function myFunction() {
